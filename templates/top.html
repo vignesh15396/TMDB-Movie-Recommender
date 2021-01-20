@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body, html {
+          height: 100%;
+          margin: 0;
+        }
+
+        .bg {
+          /* The image used */
+          background-image: url("../static/bg15.jpg");
+
+          /* Full height */
+          height: 100%;
+
+          /* Center and scale the image nicely */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+    .column {
+    float: left;
+    }
+
+    /* Set width length for the left, right and middle columns */
+    .left {
+    width: 50%;
+    }
+
+    .middle {
+    width: 50%;
+    }
+
+    .right {
+    width: 50%;
+    }
+
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+</style>
+</head>
+<!--<body background="../static/bg6.jpg">-->
+<body class="bg">
+<!--    <p>{{movies}}</p>-->
+    <div class="row">
+        <div class="column left">
+            <script>
+            var myStr='{{top}}';
+            var strArray = myStr.split(".");
+            document.write("<h2 style=color:Yellow;font-family:verdana;>"+"Top Rated Movies"+"</h2>");
+            // Display array values on page
+            for(var i = 0; i < strArray.length; i++)
+            {
+                document.write("<h2 style=color:White>" + strArray[i] + "</h2>");
+            }
+            </script>
+        </div>
+        <div class="column middle">
+            <script>
+            var myStr='{{pop}}';
+            var strArray = myStr.split(".");
+            document.write("<h2 style=color:Yellow;font-family:verdana;>"+"Popular Movies"+"</h2>");
+            // Display array values on page
+            for(var i = 0; i < strArray.length; i++){
+                document.write("<h2 style=color:White>" + strArray[i] + "</h2>");
+            }
+            </script>
+        </div>
+<!--        <div class="column right">-->
+<!--            <h2>Column 3</h2>-->
+<!--            <p>Data..</p>-->
+<!--        </div>-->
+    </div>
+</body>
+</html>
